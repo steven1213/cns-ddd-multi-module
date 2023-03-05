@@ -1,2 +1,24 @@
 server:
   port: 8088
+spring:
+  datasource:
+    url: jdbc:h2:mem:mydb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    jpa:
+      database-platform: org.hibernate.dialect.H2Dialect
+      open-in-view: false
+      show-sql: true
+  # 以下是h2-console的相关配置
+  h2:
+    console:
+      enabled: true # 开启h2的控制面板
+      settings:
+        trace: false # 避免输出trace级别日志信息
+        web-allow-others: false # 禁止远程web访问h2数据库
+      path: /h2-console
+  sql:
+    init:
+      schema-locations: classpath*:db/h2-schema.sql
+      data-locations: classpath*:db/h2-data.sql
