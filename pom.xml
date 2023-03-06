@@ -10,6 +10,7 @@
         <module>cns-ddd-interfaces</module>
         <module>cns-ddd-application</module>
         <module>cns-ddd-common</module>
+        <module>cns-ddd-generator</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -39,9 +40,21 @@
         <hibernate-validator.version>8.0.0.Final</hibernate-validator.version>
         <mapstruct.version>1.5.2.Final</mapstruct.version>
         <cns-log.version>0.0.1-SNAPSHOT</cns-log.version>
+        <knife4j.version>2.0.9</knife4j.version>
+        <springfox.version>3.0.0</springfox.version>
     </properties>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${springfox.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.steven</groupId>
                 <artifactId>cns-log</artifactId>
